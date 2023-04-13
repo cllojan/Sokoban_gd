@@ -1,0 +1,98 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Poppins-Bold.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://buttonTheme.tres" type="Theme" id=2]
+[ext_resource path="res://LabelTheme.tres" type="Theme" id=3]
+[ext_resource path="res://owo.png" type="Texture" id=4]
+[ext_resource path="res://MenuV.gd" type="Script" id=5]
+
+[sub_resource type="DynamicFont" id=2]
+size = 131
+outline_color = Color( 0.796078, 0.960784, 0.937255, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=1]
+size = 47
+font_data = ExtResource( 1 )
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.133333, 0.0823529, 0.160784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 64.0
+margin_top = 128.0
+margin_right = 592.0
+margin_bottom = 290.0
+theme = ExtResource( 3 )
+custom_fonts/font = SubResource( 2 )
+text = "Sokoban"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_left = 64.0
+margin_top = -336.0
+margin_right = 292.0
+margin_bottom = -57.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Inicio" type="Button" parent="VBoxContainer"]
+margin_right = 228.0
+margin_bottom = 67.0
+focus_neighbour_top = NodePath("../Salir")
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Iniciar"
+align = 0
+
+[node name="Opciones" type="Button" parent="VBoxContainer"]
+margin_top = 71.0
+margin_right = 228.0
+margin_bottom = 138.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Opciones"
+align = 0
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+margin_top = 142.0
+margin_right = 228.0
+margin_bottom = 209.0
+focus_neighbour_bottom = NodePath("../Inicio")
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 1 )
+text = "Salir"
+align = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 704.0
+margin_top = 304.0
+margin_right = 931.0
+margin_bottom = 478.0
+rect_scale = Vector2( 1.7, 1.7 )
+texture = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="VBoxContainer/Inicio" to="." method="_on_Inicio_pressed"]
+[connection signal="pressed" from="VBoxContainer/Opciones" to="." method="_on_Opciones_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_Salir_pressed"]

@@ -1,0 +1,64 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Assets/new_tileset.tres" type="TileSet" id=1]
+[ext_resource path="res://Scene/Spot.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scene/Box.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scene/Player.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game.gd" type="Script" id=5]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 5 )
+level_name = "Final"
+
+[node name="PLayer" parent="." instance=ExtResource( 4 )]
+position = Vector2( 176, 32 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+current = true
+zoom = Vector2( 0.25, 0.25 )
+
+[node name="WallsLfeft" type="Node2D" parent="."]
+
+[node name="TileMap" type="TileMap" parent="WallsLfeft"]
+z_index = -1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65544, 7, 0, 65545, 9, 0, 65546, 9, 0, 65547, 9, 0, 65548, 13, 0, 131078, 7, 0, 131079, 9, 0, 131080, 8, 0, 131081, 0, 0, 131082, 1, 0, 131083, 0, 0, 131084, 4, 0, 196614, 3, 0, 196615, 1, 0, 196616, 0, 0, 196617, 1, 0, 196618, 0, 0, 196619, 1, 0, 196620, 14, 0, 196621, 13, 0, 262150, 3, 0, 262151, 0, 0, 262152, 1, 0, 262153, 0, 0, 262154, 1, 0, 262155, 0, 0, 262156, 1, 0, 262157, 4, 0, 327686, 6, 0, 327687, 2, 0, 327688, 5, 0, 327689, 1, 0, 327690, 0, 0, 327691, 1, 0, 327692, 0, 0, 327693, 4, 0, 393224, 3, 0, 393225, 0, 0, 393226, 1, 0, 393227, 0, 0, 393228, 10, 0, 393229, 12, 0, 458760, 6, 0, 458761, 2, 0, 458762, 2, 0, 458763, 2, 0, 458764, 12, 0 )
+
+[node name="Boxs" type="Node2D" parent="."]
+
+[node name="Box" parent="Boxs" instance=ExtResource( 3 )]
+position = Vector2( 160, 64 )
+z_index = 1
+
+[node name="Box2" parent="Boxs" instance=ExtResource( 3 )]
+position = Vector2( 144, 48 )
+z_index = 1
+
+[node name="Box3" parent="Boxs" instance=ExtResource( 3 )]
+position = Vector2( 160, 80 )
+z_index = 1
+
+[node name="Box4" parent="Boxs" instance=ExtResource( 3 )]
+position = Vector2( 176, 80 )
+z_index = 1
+
+[node name="Spots" type="Node2D" parent="."]
+
+[node name="Spot" parent="Spots" instance=ExtResource( 2 )]
+position = Vector2( 160, 80 )
+z_index = -1
+
+[node name="Spot2" parent="Spots" instance=ExtResource( 2 )]
+position = Vector2( 176, 64 )
+z_index = -1
+
+[node name="Spot3" parent="Spots" instance=ExtResource( 2 )]
+position = Vector2( 144, 64 )
+z_index = -1
+
+[node name="Spot4" parent="Spots" instance=ExtResource( 2 )]
+position = Vector2( 160, 48 )
+z_index = -1
